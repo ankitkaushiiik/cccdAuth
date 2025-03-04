@@ -1,0 +1,14 @@
+package com.ccd.mailReader;
+
+import java.util.ResourceBundle;
+
+public class MailAuthenticationReader {
+
+	private static ResourceBundle rs = ResourceBundle.getBundle("mailAuthentication");
+
+	public static final String SENDER_MAIL_ID = rs.getString("SENDER_EMAIL_ID");;
+	public static final String SENDER_PASSWORD = rs.getString("SENDER_PASSWORD");;
+	//public static final String CC_MAIL_ID = rs.getString("CC_EMAIL_ID");
+	//public static final String SUBJECT = rs.getString("SUBJECT_OF_MAIL");
+
+}

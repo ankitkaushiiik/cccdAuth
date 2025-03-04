@@ -1,0 +1,29 @@
+#elogixmail set 1 inactive 
+#mail.smtp.host=mail.elogixmail.com
+#mail.smtp.port=587
+#mail.smtp.auth=true
+#mail.smtp.starttls.enable=false
+
+#gmail config
+#mail.smtp.host=smtp.gmail.com
+#mail.smtp.port=587
+#mail.smtp.auth=true
+#mail.smtp.starttls.enable=true
+
+#elogixmail set 2 active 
+mail.smtp.host=mail.elogixmail.com
+mail.smtp.socketFactory.port=465
+mail.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory
+mail.smtp.auth=true
+#mail.smtp.starttls.enable=false
+#mail.smtp.socketFactory.fallback=true
+#mail.debug=true
+
+#webmail config
+#mail.smtp.host=mail.elogixmail.com
+#mail.smtp.auth=true
+#mail.smtp.port=25
+#mail.smtp.ssl.enable=false
+#Below 2 properties not required
+#mail.smtp.socketFactory.port=465
+#mail.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory

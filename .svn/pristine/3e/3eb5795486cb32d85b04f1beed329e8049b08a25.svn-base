@@ -1,0 +1,18 @@
+package com.ccd.securityConfig;
+
+import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
+
+//@Configuration
+//@EnableResourceServer
+public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
+
+	/*
+	 * @Override public void configure(HttpSecurity http) throws Exception {
+	 * 
+	 * http.authorizeRequests().antMatchers("/general/**").hasAuthority("partial")
+	 * .antMatchers("/registration/change-password", "/log/**")
+	 * .hasAnyAuthority("ROLE_ADMIN", "ROLE_TRAINER", "ROLE_TRAINEE").anyRequest()
+	 * .hasAnyAuthority("ROLE_ADMIN").and().sessionManagement()
+	 * .sessionCreationPolicy(SessionCreationPolicy.NEVER); }
+	 */
+}

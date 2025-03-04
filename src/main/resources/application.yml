@@ -1,0 +1,18 @@
+spring:
+  datasource:   
+   #below main NIC db setup
+    url: jdbc:mysql://cpanel.vcanaglobal.in:3306/vglobali_cccda
+    username: vglobali_cccda
+    password: yH0av14b 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      auto-commit: false
+    tomcat:
+      max-active: 200
+      max-idle: 30
+      max-wait: 10000
+      default-auto-commit: false 
+
+emailConfig: 
+  emailId: noreplyappnames@chd.nic.in
+  password:
