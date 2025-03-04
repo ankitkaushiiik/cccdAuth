@@ -3,7 +3,9 @@ FROM maven:3.8.3-openjdk-8 AS build
 
 COPY . .
 
-RUN mvnw clean package -DskipTests
+# Make mvnw executable
+RUN chmod +x mvnw
+RUN ./mvnw clean package -DskipTests
 
 # Run stage
 FROM openjdk:8-jdk-alpine
@@ -15,4 +17,4 @@ COPY --from=build /target/CCDAuthenticationServer-0.0.1-SNAPSHOT.jar /app
 EXPOSE 6082
 
 # Run the jar file
-CMD ["java","-jar","CCDAuthenticationServer-0.0.1-SNAPSHOT.jar"] 
+ENTRYPOINT ["java","-jar","CCDAuthenticationServer-0.0.1-SNAPSHOT.jar"] 
