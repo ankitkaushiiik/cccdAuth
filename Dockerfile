@@ -1,17 +1,18 @@
 # Build stage
 FROM maven:3.8.3-openjdk-8 AS build
-ARG JAR_FILE=target/*.jar
+WORKDIR /app
 COPY pom.xml .
-COPY ${JAR_FILE} CCDAuthenticationServer.jar
+COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Run stage
 FROM openjdk:8-jdk-alpine
+WORKDIR /app
 # Copy the jar from build stage
-#COPY --from=build /CCDAuthenticationServer/target/*.jar /CCDAuthenticationServer/
+COPY --from=build /app/target/*.jar app.jar
 
 # Make port 6082 available outside container
 EXPOSE 6082
 
 # Run the jar file
-ENTRYPOINT ["java","-jar","/CCDAuthenticationServer 0.0.1-SNAPSHOT.jar"] 
+ENTRYPOINT ["java","-jar","app.jar"] 
