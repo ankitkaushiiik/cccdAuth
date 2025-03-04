@@ -3,7 +3,7 @@ spring:
    #below main NIC db setup
     url: jdbc:mysql://cpanel.vcanaglobal.in:3306/vglobali_cccda
     username: vglobali_cccda
-    password: yH0av14b 
+    password: yH0av14b
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       auto-commit: false

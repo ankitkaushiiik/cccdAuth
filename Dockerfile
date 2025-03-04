@@ -14,4 +14,4 @@ FROM openjdk:8-jdk-alpine
 EXPOSE 6082
 
 # Run the jar file
-ENTRYPOINT ["java","-jar","/CCDAuthenticationServer.jar"] 
+ENTRYPOINT ["java","-jar","/CCDAuthenticationServer 0.0.1-SNAPSHOT.jar"] 
