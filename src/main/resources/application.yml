@@ -15,4 +15,4 @@ spring:
 
 emailConfig: 
   emailId: noreplyappnames@chd.nic.in
-  password:
+  password: Test@1234
