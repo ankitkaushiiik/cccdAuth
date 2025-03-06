@@ -6,7 +6,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Run stage (Using a stable OpenJDK 8 runtime)
-FROM adoptopenjdk:8-jdk-alpine
+FROM amazoncorretto:8
 WORKDIR /app
 COPY --from=build /app/target/CCDAuthenticationServer-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 6082
