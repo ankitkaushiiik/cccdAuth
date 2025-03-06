@@ -15,7 +15,7 @@
 	<name>CCDAuthenticationServer</name>
 	<description>CCD Authentication Server</description>
 	<properties>
-		<java.version>18</java.version>
+		<java.version>1.8</java.version>
 		<spring-cloud.version>Hoxton.SR10</spring-cloud.version>
 		<log4j2.version>2.17.0</log4j2.version>
 	</properties>
@@ -99,9 +99,9 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-				<groupId>com.github.ulisesbocchio</groupId>
-				<artifactId>jasypt-maven-plugin</artifactId>
-				<version>3.0.3</version>
+				<groupId>org.jasypt</groupId>
+				<artifactId>jasypt</artifactId>
+				<version>1.9.3</version>
 			</plugin>
 		</plugins>
 	</build>
