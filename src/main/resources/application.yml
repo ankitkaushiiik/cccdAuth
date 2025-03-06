@@ -14,5 +14,5 @@ spring:
       default-auto-commit: false 
 
 emailConfig: 
-  emailId: testing@vcanaglobal.in
-  password: Test@321$
+  emailId: noreplyappnames@chd.nic.in
+  password: 
