@@ -1,18 +1,13 @@
-# Build stage (Maven with JDK 18)
-FROM maven:3.8.7-openjdk:8-jdk-alphine AS build
+# Use an official JDK 8 runtime as a parent image
+FROM openjdk:8-jdk-alpine
+
+# Set the working directory in the container
 WORKDIR /app
 
-# Optimize dependency caching
-COPY pom.xml .
-RUN mvn dependency:go-offline -B
+# Copy the Maven build files and the application JAR
+COPY target/*.jar app.jar
 
-# Copy source files and build the application
-COPY src ./src
-RUN mvn clean package -DskipTests
-
-# Run stage (Using OpenJDK 18)
-FROM eclipse-temurin:18-jdk AS runtime
-WORKDIR /app
-COPY --from=build /app/target/CCDAuthenticationServer-0.0.1-SNAPSHOT.jar app.jar
-EXPOSE 6082
+# Expose the application port (default for Spring Boot is 8080)
+EXPOSE 8080
+# Run the JAR file
 ENTRYPOINT ["java", "-jar", "app.jar"]
