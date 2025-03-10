@@ -1,5 +1,5 @@
 # Build stage (Maven with JDK 18)
-FROM 3.8.6-openjdk-8 AS build
+FROM maven:3.8.6-openjdk-8 AS build
 WORKDIR /app
 
 # Optimize dependency caching
