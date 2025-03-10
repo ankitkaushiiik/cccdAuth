@@ -40,17 +40,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.csrf().disable().authorizeRequests().antMatchers("/oauth/token/").permitAll().anyRequest().authenticated().and()
-		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER);
+		//http.csrf().disable().authorizeRequests().antMatchers("/oauth/token/").permitAll().anyRequest().authenticated().and()
+		//.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER);
 
 		
 
-		/*
-		 * http.csrf().disable().authorizeRequests().antMatchers("/registration/**").
-		 * permitAll().anyRequest()
-		 * .authenticated().and().sessionManagement().sessionCreationPolicy(
-		 * SessionCreationPolicy.NEVER);
-		 */
+		
+		 http.csrf().disable().authorizeRequests().antMatchers("/registration/**").
+		 permitAll().anyRequest()
+		 .authenticated().and().sessionManagement().sessionCreationPolicy(
+		  SessionCreationPolicy.NEVER);
+		 
 
 		/*
 		 * http.csrf().disable().authorizeRequests().antMatchers("/registration/**").
@@ -64,11 +64,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		 * .anyRequest().authenticated().and()
 		 * .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER);
 		 */
-		/*
-		 * http.csrf().disable().authorizeRequests().antMatchers("/user/**").permitAll()
-		 * .anyRequest().authenticated().and()
-		 * .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER);
-		 */
+		
+		  http.csrf().disable().authorizeRequests().antMatchers("/user/**").permitAll()
+		  .anyRequest().authenticated().and()
+		  .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER);
+		 
 
 	}
 }
