@@ -1,5 +1,5 @@
 # Build stage (Maven with JDK 18)
-FROM maven:3.8.7-openjdk-8 AS build
+FROM 3.8.6-openjdk-8 AS build
 WORKDIR /app
 
 # Optimize dependency caching
@@ -11,7 +11,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Run stage (Using OpenJDK 18)
-FROM openjdk:8-jdk-alpine
+FROM eclipse-temurin:8-jdk-alpine
 WORKDIR /app
 COPY --from=build /app/target/CCDAuthenticationServer-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 6082
