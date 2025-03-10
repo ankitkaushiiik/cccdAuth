@@ -46,10 +46,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		
 
 		
-		 http.csrf().disable().authorizeRequests().antMatchers("/registration/**").
-		 permitAll().anyRequest()
-		 .authenticated().and().sessionManagement().sessionCreationPolicy(
-		  SessionCreationPolicy.NEVER);
+		// http.csrf().disable().authorizeRequests().antMatchers("/registration/**").
+		// permitAll().anyRequest()
+		// .authenticated().and().sessionManagement().sessionCreationPolicy(
+		 // SessionCreationPolicy.NEVER);
 		 
 
 		/*
