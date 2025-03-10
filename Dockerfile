@@ -1,0 +1,18 @@
+# Build stage (Maven with JDK 18)
+FROM maven:3.8.7-openjdk:8-jdk-alphine AS build
+WORKDIR /app
+
+# Optimize dependency caching
+COPY pom.xml .
+RUN mvn dependency:go-offline -B
+
+# Copy source files and build the application
+COPY src ./src
+RUN mvn clean package -DskipTests
+
+# Run stage (Using OpenJDK 18)
+FROM eclipse-temurin:18-jdk AS runtime
+WORKDIR /app
+COPY --from=build /app/target/CCDAuthenticationServer-0.0.1-SNAPSHOT.jar app.jar
+EXPOSE 6082
+ENTRYPOINT ["java", "-jar", "app.jar"]
